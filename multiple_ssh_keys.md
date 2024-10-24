@@ -76,6 +76,29 @@ git clone git@project2:user1/helloworld2.git
 最后，有一点需要提示的是，虽然配置中还定义了 `User git`，不过测试下来发现，这个值并不会被访问到。
 所以 User 的值设置与否都不重要，完全不影响连接成功。
 
+不过要注意的是，既然我们的代码托管在 github.com 网站上，那么我们使用 git 命令或者 ssh 命令对远程库操作时，就相当于我们要向这个服务器进行认证，而这个服务器允许我们认证的 username 就是 git。
+也就是说，它只开放了 git 用户给我们向服务器进行认证，而我们真正的用户是通过 git 再进一步操作的。
+
+所以，ssh 配置中，我们配置 User 时，为避免混淆，就写成 git。
+
+比如 `git clone git@project1:user1/helloworld1.git` 命令中，`@` 符号前面的 git 就是用户名。
+
+我们可以用 ssh 命令来验证一下认证是否成功：
+
+```
+ssh -vT git@github.com
+```
+
+只要你的本地私钥认证了远程仓库中的公钥，你就可以得到如下成功认证的信息：
+
+```
+> Hi USERNAME! You've successfully authenticated...
+```
+
+参考：
+
+
+https://docs.github.com/zh/authentication/troubleshooting-ssh/error-permission-denied-publickey
 
 
 
