@@ -22,7 +22,7 @@
 
 关于别名，这是我们简化任务的一大利器。我这里要实现的就是，输入 `nvz` 可以启用 **LazyVim** 的配置，而输入 `nva` 则可以启用 **AstroVim** 的配置，输入 `nvl` 又可以启用 **LunaVim** 的配置，想用哪个配置，直接换个别名启用 Neovim，是不是超级方便？
 
-我们把上述功能都在一个 Shell 脚本中实现（比如脚本命名为 `stow.fish`），最后，再实现一些管理别名的命令，达到类似如下的一些功能，美不胜哉？
+我们把上述功能都在一个 Shell 脚本中实现（比如脚本命名为 `stow.fish`），最后，再实现一些管理别名的命令，达到类似如下的一些功能，岂不美哉？
 
 
 ![](https://us-article-images.oss-cn-shanghai.aliyuncs.com/screenshots/stow_neovim.png)

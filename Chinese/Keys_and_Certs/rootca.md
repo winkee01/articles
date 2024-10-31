@@ -13,9 +13,9 @@
 ![](https://us-article-images.oss-cn-shanghai.aliyuncs.com/screenshots/rsa3levelcerts.png)
 
 
-这篇的重点就是创建顶层的根证书
+这篇的重点就是创建顶层的根证书，这是一个自签名证书。
 
-`RSA_VicSign_CA`
+`rsa_root_ca`
 
 
 假设我们根证书的属性如下：
@@ -85,10 +85,10 @@
 
 ###### 操作要点：
 
--   配置文件 `/opt/homebrew/etc/openssl@3/openssl.cnf` 或 `/usr/lib/ssl/openssl.cnf`
+-   配置文件 `/usr/lib/ssl/openssl.cnf` 或 `/opt/homebrew/etc/openssl@3/openssl.cnf`
 -   根据执行的命令去查找 `openssl.cnf` 中对应的配置信息
 
-比如 req 命令，那么就查找 `[ req ]` 部分对应的信息
+比如 req 命令，那么就查找 `[ req ]` 段落中的信息
 
 ![](https://us-article-images.oss-cn-shanghai.aliyuncs.com/screenshots/openssl_config_explained.png)
 
@@ -102,9 +102,9 @@
 OpenSSL 中，创建私钥的命令是 `openssl genpkey`。  
 
 
-这里实验为了方便，每次免去输入密码的麻烦，我们把密码文件来加密私钥。
+这里实验为了方便，每次免去输入密码的麻烦，我把密码保存在一个文件 `password.txt` 中，然后用这个文件来加密私钥。
 
-（当然，如果你坚持暂时不加密码保护，你可以省去下面所有与使用 `password.txt` 相关的操作）
+（当然，如果你坚持暂时不对私钥添加密码保护，你可以省去下面所有与使用 `password.txt` 相关的操作）
 
 
 
@@ -121,9 +121,9 @@ openssl genpkey -algorithm RSA \
 ###### 要点：
 
 -   创建 RSA 私钥时，可以同时对其添加密码保护。
--   老版本的 OpenSSL 命令创建的 RSA 私钥是 PKCS#1 格式的，不支持 `-pbkdf2`, `-iter` 和 `-v2prf` 选项，因为这些属性 PKCS#8 格式中的。
+-   老版本的 OpenSSL 命令创建的 RSA 私钥是 PKCS#1 格式的。
 -   新版本的 OpenSSL (3.0+) 创建的私钥已经默认是 PKCS#8 格式了。（指定 `-aes256` 加密算法后，默认会使用 PBKDF2 函数，迭代次数为 2048次，伪随机算法为 hmacWithSHA256，并且 key size 默认为 2048 bit）
--   如果不是 PKCS#8 格式，则建议把私钥转换成 PKCS#8 格式，使用 `openssl pkcs8` 命令，它支持手动指定上述选项。
+-   如果不是 PKCS#8 格式，则建议把私钥转换成 PKCS#8 格式，使用 `openssl pkcs8 -topk8` 命令，它支持手动指定`-pbkdf2`, `-iter` 和 `-v2prf` 选项。
 
 
 
@@ -158,8 +158,6 @@ openssl genpkey -algorithm ed25519 \
 
 
 ![](https://us-article-images.oss-cn-shanghai.aliyuncs.com/screenshots/ed25519_key_size.png)
-
-
 
 
 

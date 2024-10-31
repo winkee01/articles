@@ -196,6 +196,8 @@ openssl req -x509 -key FactTrust_Root_CA_PKCS8_AES256.key -days 7300 \
 openssl pkcs8 -in encrypted_private.key -out unencrypted_private.key \
   -passin "pass:your_password"
 
+openssl pkcs8 -in encrypted_private.key -out unencrypted_private.key \
+  -passin "pass:password.txt"
 ```
 
 
@@ -204,9 +206,3 @@ openssl pkcs8 -in encrypted_private.key -out unencrypted_private.key \
 如果你喜欢我的文章，欢迎关注我的微信公众号 deliverit。
 
 
-
-Let me make it more clear, if I encrypt a private key using below command, how can I decrypt it:
-
-```
-openssl pkcs8 -topk8 -v2 aes256  -v2prf hmacWithSHA256 -iter 120000 -in FactTrust_Root_CA.key -out FactTrust_Root_CA_PKCS8_AES256.key
-```
