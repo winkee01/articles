@@ -19,14 +19,14 @@
 
 - 创建 Private Key + Password file
 - 创建 CSR
-- CA 对 CSR 签名，签发最终证书
+- CA 对 CSR 签名，签发证书
 
 主要的区别在于参数配置不一样，比如每个不同的网站的扩展信息不一样（主要是 subjectAltName，也叫 SAN）。
 
 
 ### 实战案例
 
-现在假设，我们访问 echo 服务，它同时支持 `echo1.example.com` 和 `echo2.example.com` 和泛域名 `*.example.com`，还支持 IP 地址访问。
+现在假设，我们有一个 Web 服务器，它提供 echo 服务，同时支持 `echo1.example.com` 和 `echo2.example.com` 和泛域名 `*.example.com`，还支持 IP 地址访问。
 
 进入 `user_certs/echo` 目录：
 
