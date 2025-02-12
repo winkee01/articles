@@ -140,7 +140,7 @@ docker\_auth 支持的登陆方法有：
 Supported authentication methods（登陆方式）:
 
 - Static list of users
-- Google Sign-In (incl. Google for Work / GApps for domain) (documented [here](https://github.com/cesanta/docker_auth/blob/master/examples/reference.yml))
+- Google Sign-In (incl. Google for Work / GApps for domain) (documented [here](https://github.com/cesanta/docker_auth/blob/master/examples/reference.yml))
 - Github Sign-In
 - Gitlab Sign-In
 - LDAP bind ([demo](https://github.com/kwk/docker-registry-setup))
@@ -476,4 +476,4 @@ volume:
 
 全文完！
 
-如果你喜欢我的文章，欢迎关注我的微信公众号 deliverit。
+如果你喜欢我的文章，欢迎关注我的微信公众号 codeandroad。

@@ -203,6 +203,6 @@ openssl pkcs8 -in encrypted_private.key -out unencrypted_private.key \
 
 全文完！
 
-如果你喜欢我的文章，欢迎关注我的微信公众号 deliverit。
+如果你喜欢我的文章，欢迎关注我的微信公众号 codeandroad。
 
 

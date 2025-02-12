@@ -71,7 +71,7 @@ openssl asn1parse -in private/rsa_echo_encrypted.key
 default_bits       = 4096
 default_keyfile    = rsa_encrypted.key
 distinguished_name = req_distinguished_name
-x509_extensions    = v3_intermediate_ca
+x509_extensions    = x509_v3_ext
 prompt             = no
 
 [ req_distinguished_name ]
@@ -204,7 +204,7 @@ DNS.3 = *.example.com
 执行命令：
 
 ```
-openssl ca -days 365  \
+openssl ca -days 365 -notext -batch \
     -config ica.cnf \
     -cert CA/rsa_int_ca.crt \
     -keyfile CA/private/rsa_encrypted.key \
@@ -229,7 +229,7 @@ openssl ca -days 365  \
 然后执行下面的命令：
 
 ```
-openssl ca -days 365 \
+openssl ca -days 365 -notext \
   -config <(cat ica.cnf v3_ext_echo.cnf) \
   -extensions v3_ext_echo \
   -cert CA/rsa_int_ca.crt \
@@ -240,7 +240,7 @@ openssl ca -days 365 \
 ```
 
 
-新证书会生成在 `newcerts/` 目录中，默认名字是 serial 编号。比如初始的 serial 是 00，那么签发的第一个证书就是 newcerts/00.pem，serial 文件中会变成 01。
+新证书会生成在 `newcerts/` 目录中，默认名字是 serial 编号。比如初始的 serial 是 00，那么签发的第一个证书就是 `newcerts/00.pem`，serial 文件中会变成 01。
 
 `index.txt` 中也会增加一条记录，如下：
 
@@ -255,15 +255,27 @@ V   251030162019Z       00  unknown /C=US/ST=TX/O=echo service
 
 ```
 cd user_certs/echo
-openssl x509 -text -noout -in newcerts/00.pem
+openssl x509 -text -noout -in rsa_echo.crt
 ```
+
+
+#### 重复签发
+
+如果我们使用 `openssl ca` 命令对同一个 `.csr` 文件再次签名，那么会出现一个错误：
+
+```
+ERROR: There is already a certificate for /CN=echo service
+```
+
+可见，我们不能对同一个 `/CN` 多次签发证书。想要签发的话，必须先吊销之前的证书。我们后续文章还会继续介绍证书到期和吊销的相关知识。
+
 
 
 全文完！
 
-下集预告：使用 echo 证书：用 Nginx 搭建 HTTPS 服务器
+下集预告：全面解析！用户证书的使用，用 Nginx 搭建 HTTPS 服务器。
 
 
 
-如果你喜欢我的文章，欢迎关注我的微信公众号 deliverit。
+如果你喜欢我的文章，欢迎关注我的微信公众号 codeandroad。
 

@@ -70,7 +70,7 @@ Name: gRPC
 Description: high performance general RPC framework
 Version: 4.0.0-dev
 Cflags: -I${includedir}
-Requires.private:  zlib libcares openssl
+Requires.private:  zlib libcares openssl
 Libs: -L${libdir} -lgrpc
 Libs.private:
 ```
@@ -163,12 +163,12 @@ configure CXXFLAGS="$(pkg-config --cflags protobuf)" \
 
 全文完！
 
-如果你喜欢我的文章，欢迎关注我的微信公众号 deliverit。
+如果你喜欢我的文章，欢迎关注我的微信公众号 codeandroad。
 
 
 
 
 参考来源：
 https://people.freedesktop.org/~dbn/pkg-config-guide.html
-https://github.com/google/protobuf/tree/master/src 
+https://github.com/google/protobuf/tree/master/src 
 

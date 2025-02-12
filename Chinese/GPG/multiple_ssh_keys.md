@@ -27,6 +27,14 @@ ssh myserver
 
 相比于 要输入 `ssh tony@192.168.131.12` 是不是简单很多？ 这是因为这里的 myserver 会被自动替换。
 
+另外，如果我们在 `/etc/hosts` 中添加了对 myserver 的地址映射，比如
+
+```
+192.168.131.12 myserver
+```
+
+那么我们这里还可以免去 `HostName 192.168.131.12` 这一行。
+
 
 现在，我们回到 github.com 一个账户对应多个项目的问题
 
@@ -47,7 +55,7 @@ ssh myserver
 现在假设我们在 github.com 同一个账户上有多个项目（以 project1, project2 为例）
 为了方便我们管理 ssh 登录，pull，push 等动作，
 
-首先我们需要按如下方式配置 `~/.ssh/config` 文件：
+首先我们最好按如下方式配置 `~/.ssh/config` 文件：
 
 ```ssh
 Host project1 
@@ -72,6 +80,22 @@ git clone git@project2:user1/helloworld2.git
 与之前 SSH 登录类似，这里的 project1 和 project2 分别对应了两个不同的 SSH 配置，
 并且 HostName 都是 github.com，但是这两个别名对应了两个不同的私钥，我们可以正确访问不同的 repo。
 
+####怎么设置 origin？
+假设，我们原始的 origin 信息如下：
+```
+git remote add origin git@github.com:winkee01/mimal.git
+```
+
+我们可以这样来修改：
+```
+git remote set-url origin git@project1:winkee01/mimal.git
+```
+
+现在，我们执行下面的命令就可以推送到正确的远程仓库了：
+```
+git push -u origin master
+
+```
 
 最后，有一点需要提示的是，虽然配置中还定义了 `User git`，不过测试下来发现，这个值并不会被访问到。
 所以 User 的值设置与否都不重要，完全不影响连接成功。
@@ -104,7 +128,7 @@ https://docs.github.com/zh/authentication/troubleshooting-ssh/error-permission-d
 
 全文完！
 
-如果你喜欢我的文章，欢迎关注我的微信公众号 deliverit。
+如果你喜欢我的文章，欢迎关注我的微信公众号 codeandroad。
 
 
 

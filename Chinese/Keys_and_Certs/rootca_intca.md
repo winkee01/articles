@@ -272,7 +272,7 @@ authorityKeyIdentifier = keyid:always,issuer:always
 执行命令：
 
 ```
-openssl ca -days 3600 \
+openssl ca -days 3600 -notext \
     -config ca.cnf \
     -cert CA/rsa_ca.crt \
     -keyfile CA/private/rsa_encrypted.key \
@@ -320,7 +320,7 @@ cd ../root_ca
 再次执行：
 
 ```
-openssl ca -days 3600 \
+openssl ca -days 3600 -notext \
     -config ca.cnf \
     -cert CA/rsa_ca.crt \
     -keyfile CA/private/rsa_encrypted.key \
@@ -338,7 +338,7 @@ OK,这次就成功了！
 如果想由 `root_ca` 指定 v3 extension 而不是 copy，那么命令为：
 
 ```
-openssl ca -days 3600 \
+openssl ca -days 3600 -notext \
   -config <(cat rsa_ca.cnf csr_ext.cnf) \
   -extensions v3_intermediate_ca \
   -cert CA/rsa_ca.crt \
@@ -353,7 +353,7 @@ openssl ca -days 3600 \
 `index.txt` 中也会增加一条记录，如下：
 
 ```
-V    340907220747Z        00    unknown    /C=US/ST=TX/O=Security Lab/OU=Web3/CN=Web3 Intermediata CA
+V    340907220747Z        00    unknown    /C=US/ST=TX/O=Security Lab/OU=Web3/CN=Web3 Intermediata CA
 ```
 
 注意 crlnumber 文件中的值依然是 00，这是因为我们没有撤销过证书，

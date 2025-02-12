@@ -126,7 +126,7 @@ stow -t ~/.config/nvim-starter/nvim .
 
 我们把 `~/.config/nvim` 软链到目标目录后，还是不够的，因为这仅是修改了 `stdpath(“config”)`；我们还需要设置插件的下载目录，即 `stdpath(“data”)`。它是 plugin 的 user path。这个 `stdpah(“data”)` 的值来自于 `$XDG_DATA_HOME`， 它默认是 `~/.local/share/`，具体来说，packpath 会在 `~/.local/share/nvim/site` 中搜索 plugin。如果多个不同的配置项目都是用这个目录来管理 plugins 的话，显然就会相互冲突，所以我们还需要修改成一个第三方目录，方便互不打扰。
 
-注：`stdpath(“data”)` 默认值是来自 `$XDG_DATA_HOME`，它默认是  `$HOME/.local/share`.
+注：`stdpath(“data”)` 默认值是来自 `$XDG_DATA_HOME`，它默认是  `$HOME/.local/share`.
 
 
 #### 具体步骤：

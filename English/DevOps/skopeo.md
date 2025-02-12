@@ -1,15 +1,17 @@
+Also, translate this:
+
 ## Skopeo
 
 Skopeo is a simple command line tool to interact with registries and manage — inspect, copy and delete — container images. While these tasks can also be done with Podman, Skopeo is a more lightweight “do one thing and do it well” kind of tool.
 
-The binary can be easily installed on macOS with brew install skopeo and we don’t need a Linux host at all — feel free to stop your Linux VM.
+The binary can be easily installed on macOS with brew install skopeo and we don’t need a Linux host at all — feel free to stop your Linux VM.
 
 ```
 $ skopeo -v
 skopeo version 0.1.40
 ```
 
-Before we can do anything useful, we need to create a containers-policy file that contains verification rules to decide whether we accept a pulled image or not. The default location is/etc/containers/policy.json or we can point to another file adding the --policy <policy file> parameter. Alternatively we can use the --insecure-policy parameter to accept all images. Note, these policy parameters are “global” parameters and must be added before the action command (i.e. inspect, copy, delete, etc). The easiest is to create a policy file allowing all registries at the default location:
+Before we can do anything useful, we need to create a containers-policy file that contains verification rules to decide whether we accept a pulled image or not. The default location is/etc/containers/policy.json or we can point to another file adding the --policy <policy file> parameter. Alternatively we can use the --insecure-policy parameter to accept all images. Note, these policy parameters are “global” parameters and must be added before the action command (i.e. inspect, copy, delete, etc). The easiest is to create a policy file allowing all registries at the default location:
 
 ```
 $ sudo sh -c 'cat >/etc/containers/policy.json' <<EOF 

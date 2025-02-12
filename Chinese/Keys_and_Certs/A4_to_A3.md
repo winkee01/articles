@@ -264,4 +264,4 @@ Script 安装完成之后，在 pdf 文件点击右键，点击 Make booklet PDF
 
 全文完！
 
-如果你喜欢我的文章，欢迎关注我的公众号 deliverit
+如果你喜欢我的文章，欢迎关注我的公众号 codeandroad

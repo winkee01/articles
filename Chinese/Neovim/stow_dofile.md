@@ -1,0 +1,6 @@
+
+```
+mkdir my-dotfiles
+```
+
+mv ~/.*
