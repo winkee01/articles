@@ -30,11 +30,13 @@ gpg: [stdin]: clear-sign failed: Inappropriate ioctl for device
 
 主要有两个可能的原因：
 
-- （1）是你的密钥 ID 配置错误。
+-（1）密钥 ID 配置错误。
 
--（2）缺少某个关键组件。比如，你创建 gpg key 配置了密码保护，但是你的命令行没有安装 pinentry 这个组件。
+-（2）没有创建具有 Sign 功能的 subkey
 
-我遇到的就是（2）这个情况，创建 gpg key 时设置了密码保护，也正常使用。
+-（3）缺少某个关键组件。 比如，你创建的 gpg key 配置了密码保护，但是你的命令行没有安装 pinentry 这个组件。
+
+**我遇到的就是（3）这个情况**，创建 gpg key 时设置了密码保护，也正常使用。
 但是，时间久了，我有一次清理 Homebrew 所安装的软件，导致了 pinentry 这个组件被误删。
 
 pinentry 这个组件的作用是弹出密码填写框，我们需要在里面填写密码才能解锁使用 gpg key。
@@ -56,6 +58,12 @@ brew install pinentry-mac
 ```
 echo "pinentry-program /opt/homebrew/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
 
+```
+
+查看所有已配置组件
+
+```
+gpgconf --list-components
 ```
 
 重启 gpg-agent
