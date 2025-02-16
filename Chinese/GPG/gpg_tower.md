@@ -33,6 +33,8 @@ pinentry-program /opt/homebrew/bin/pinentry-mac
 echo no-tty >> ~/.gnupg/gpg.conf
 ```
 
+![](https://us-article-images.oss-cn-shanghai.aliyuncs.com/screenshots/tower_gpg_sign_commit.jpg)
+
 参考：
 
 https://gist.github.com/LeonardoCardoso/4638744787a527d5e1965a9b6d302978
