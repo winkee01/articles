@@ -1,5 +1,5 @@
 
-### gpg 命令操作实验
+#### gpg 命令操作实验
 
 这篇文章通过一些练习来掌握 gpg 不同功能的用法
 
@@ -17,7 +17,7 @@
 
 ##### (3) 对称加解密
 
-```
+```bash
 gpg --symmetric --cipher-algo AES256 ~/.ssh/id_rsa
 gpg --decrypt id_rsa.gpg > ~/.ssh/id_rsa
 ```
@@ -30,14 +30,14 @@ gpg --decrypt id_rsa.gpg > ~/.ssh/id_rsa
 
 选项 `--default-key` 的意思是指定 signer，也就是我们用来给别人签名的 Master Key。如果没有指定，那么 gpg 会使用 keyring 中默认的 signer，通常是 keyring 中的第一个 Key。我们可以在 `~/.gnupg/gpg.conf` 中修改：
 
-```
+```bash
 ~$ head -1 ~/.gnupg/gpg.conf 
 default-key emusk@spacex.com
 ```
 
 ##### (5) Signing data 对数据签名
 
-gpg 提供 `--sign` 和 `--clearsign` 对数据进行签名，两个选项都会把签名与原数据文件打包成一个整体，--sign 还会对数据进行压缩，后者不压缩。
+gpg 提供 `--sign` 和 `--clearsign` 对数据进行签名，两个选项都会把签名与原数据文件打包成一个整体，`--sign` 还会对数据进行压缩，后者不压缩。
 
 ![](https://us-article-images.oss-cn-shanghai.aliyuncs.com/screenshots/gpg_signing_data.png)
 
