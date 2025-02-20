@@ -1,11 +1,12 @@
 
+### 使用 GPG key 为 git commit 进行签名
 配置好 git 使用 gpg 进行签名之后，我们需要使用 -S 选项来触发签名
 
 ```
 git commit -S -m "Fix bug"
 ```
 
-如果出现如下错误：
+##### 如果出现如下错误：
 
 ```
 error: gpg failed to sign the data
@@ -28,7 +29,7 @@ gpg: signing failed: Inappropriate ioctl for device
 gpg: [stdin]: clear-sign failed: Inappropriate ioctl for device
 ```
 
-主要有两个可能的原因：
+##### 主要有两个可能的原因：
 
 -（1）密钥 ID 配置错误。
 
@@ -44,10 +45,13 @@ pinentry 这个组件的作用是弹出密码填写框，我们需要在里面�
 
 如下：
 
+![](https://us-article-images.oss-cn-shanghai.aliyuncs.com/screenshots/gpg-clearsign.png)
+
 ![](https://us-article-images.oss-cn-shanghai.aliyuncs.com/screenshots/pinentry_mac.jpg)
 
+![render local image](../../images/sni_multiple_ssl_certs.png)
 
-重新安装这个组件
+##### 重新安装这个组件
 
 ```
 brew install pinentry-mac
@@ -60,7 +64,7 @@ echo "pinentry-program /opt/homebrew/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.con
 
 ```
 
-查看所有已配置组件
+##### 查看所有已配置组件
 
 ```
 gpgconf --list-components
