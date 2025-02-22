@@ -1,0 +1,186 @@
+{
+  "main": {
+    "id": "baae59011fccb9d6",
+    "type": "split",
+    "children": [
+      {
+        "id": "9ec74a8c6951170e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fd01f75763ad4d71",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Chinese/Keys_and_Certs/A4_to_A3.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "A4_to_A3"
+            }
+          },
+          {
+            "id": "a22ac29f7a4fb404",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Chinese/Keys_and_Certs/caddy_fix_error.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "caddy_fix_error"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3f42b624e5a975bc",
+    "type": "split",
+    "children": [
+      {
+        "id": "19062c2dc3465620",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "10bbce6d232854ed",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "0facf341856cfe79",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "aaf3d9da644d1c74",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "3d5c32593e9f473a",
+    "type": "split",
+    "children": [
+      {
+        "id": "867db719d34c0e5e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a2f7e955870fa0bd",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Chinese/Keys_and_Certs/A4_to_A3.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for A4_to_A3"
+            }
+          },
+          {
+            "id": "40860eed674134f9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Chinese/Keys_and_Certs/A4_to_A3.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from A4_to_A3"
+            }
+          },
+          {
+            "id": "d27d30b7aa8a8d8e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "277eb78e1ae4ac24",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Chinese/Keys_and_Certs/A4_to_A3.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of A4_to_A3"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "a22ac29f7a4fb404",
+  "lastOpenFiles": [
+    "Chinese/Keys_and_Certs/ca_full_simple.md",
+    "Chinese/Keys_and_Certs/A4_to_A3.md"
+  ]
+}

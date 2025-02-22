@@ -857,7 +857,7 @@ $ openssl x509 -text -noout -in winkee.crt
 微信公众号：“知辉”
 
 
-搜索“deliverit”或
+搜索 codeandroad 或
 
 
 扫描二维码
